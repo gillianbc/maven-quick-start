@@ -1,9 +1,13 @@
 package gillian.bladenclark;
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.commons.lang3.StringUtils;
 
 public class Application {
-    
+    public int countWords(String phrase){
+        String[] separateWords = StringUtils.split(phrase," ");
+        return (separateWords == null) ? 0 : separateWords.length;
+    }
     public void greet(){
         //Generics only came into java at 1.7
         List<String> greetings = new ArrayList<>();
@@ -24,5 +28,6 @@ public class Application {
     	System.out.println ("Starting Application");
         Application app = new Application();
         app.greet();
+        System.out.println(app.countWords("I have four words"));
     }
 }
